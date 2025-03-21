@@ -10,7 +10,6 @@ ui_print "- Extracting module files"
 unzip -o "$ZIPFILE" "*.sh" -d $MODPATH >&2
 unzip -o "$ZIPFILE" "$API/$ARCH/*" -d $TMPDIR >&2
 unzip -o "$ZIPFILE" "module.prop" -d $MODPATH >&2
-unzip -o "$ZIPFILE" "XposedInstaller.apk" -d $MODPATH >&2
 if [ $API -ge 26 ]; then
   XVERSION="90-beta3"
   XPOSEDBRIDGE="XposedBridge.90.jar"
