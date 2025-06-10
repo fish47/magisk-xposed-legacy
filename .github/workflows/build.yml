@@ -1,0 +1,30 @@
+name: Build
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Tag
+        id: tag
+        uses: benjlevesque/short-sha@v3.0
+        with:
+          length: 6
+
+      - name: Package
+        run: |
+          mkdir dist
+          .github/workflows/build.sh . dist
+
+      - name: Upload
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ env.SHA }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          allowUpdates: true
+          artifacts:
+            dist/*.zip
