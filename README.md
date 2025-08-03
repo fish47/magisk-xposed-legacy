@@ -1,13 +1,17 @@
 # Systemless Xposed Framework
 
-### This module is only for Android 5.0 to Android 8.1!
+Split xposed magisk module by version and architecture.
 
-Please install my modified [XposedInstaller(3.1.5)](https://forum.xda-developers.com/attachment.php?attachmentid=4751403&d=1556682769) to properly detect Systemless Xposed.
+## Upstream
 
-The APK is signed by my personal key, you might need to uninstall other versions before installing mine.
+https://github.com/Magisk-Modules-Repo/xposed
 
-The binaries are identical to builds downloaded from official links [https://dl-xda.xposed.info/framework/](https://dl-xda.xposed.info/framework/), with the exception that `app_process*` is patched with the following command:
+## Installer
 
-`sed -i 's:/system/xposed.prop\x0:/sbin/xposed.prop\x0\x0\x0:g' app_process*`
+My slimmed-down installer from [releases](https://github.com/fish47/XposedInstaller/releases)
 
-This module most likely will never get any updates in the future, since @rovo89 seems to have stopped development. This module is here for historical reasons.
+## Credits
+- [rovo89](https://github.com/rovo89) for xposed framework and installer
+- [topjohnwu](https://github.com/topjohnwu) for xposed magisk module
+- [bibarub](https://github.com/bibarub) for adapting this module to the latest magisk
+- [v-y-archive](https://github.com/v-y-archive) for splitting this module by version
